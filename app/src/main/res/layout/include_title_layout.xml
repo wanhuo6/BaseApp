@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:id="@+id/ll_appbar"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:orientation="vertical"
+              android:visibility="gone">
+
+    <com.ahuo.myapp2.ui.widget.MyAppBar
+        android:id="@+id/kk_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"/>
+
+    <View
+        android:id="@+id/split_line"
+        style="@style/SplitLineStyle"/>
+
+</LinearLayout>
