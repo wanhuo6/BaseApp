@@ -13,6 +13,8 @@ public interface AppConfig {
 
     String API_HOST = BuildConfig.API_HOST;
 
+    String APP_LOGO="http://www.liuhuijie.cn/image/user/headImage/hua.jpg";
+
     String APP_LOG_TAG = "MY_APP";
 
     String APP_SP_NAME = "a_huo_share_data";

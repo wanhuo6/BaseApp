@@ -17,7 +17,7 @@ android {
 
         debug {
             buildConfigField("boolean", "MY_LOG", "true")
-            buildConfigField("String", "API_HOST", "\"http://www.liuhuijie.com/\"")
+            buildConfigField("String", "API_HOST", "\"http://www.liuhuijie.cn/person/\"")
             versionNameSuffix "-debug"
             minifyEnabled false
             debuggable true
@@ -26,7 +26,7 @@ android {
         }
         kktest {
             buildConfigField("boolean", "MY_LOG", "true")
-            buildConfigField("String", "API_HOST", "\"http://www.liuhuijie.com/\"")
+            buildConfigField("String", "API_HOST", "\"http://www.liuhuijie.cn/person/\"")
             versionNameSuffix "-test"
             minifyEnabled true
             debuggable true
@@ -36,7 +36,7 @@ android {
         }
         release {
             buildConfigField("boolean", "MY_LOG", "false")
-            buildConfigField("String", "API_HOST", "\"http://www.liuhuijie.com/\"")
+            buildConfigField("String", "API_HOST", "\"http://www.liuhuijie.cn/person/\"")
             minifyEnabled true
             debuggable false
             shrinkResources true//移除无用的资源文件

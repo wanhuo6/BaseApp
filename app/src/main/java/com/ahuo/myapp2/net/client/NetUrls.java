@@ -8,5 +8,10 @@ package com.ahuo.myapp2.net.client;
 
 public interface NetUrls {
 
+    String REGISTER="register";
+
+    String LOGIN="login";
+
+    String GET_USERS="getUsers";
 
 }

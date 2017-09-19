@@ -1,15 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical">
-
     <TextView
-        android:layout_centerInParent="true"
+        android:id="@+id/tvLookUsers"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="@color/colorPrimaryDark"
-        android:textSize="@dimen/sp_18"
-        android:text="主页"/>
+        android:padding="@dimen/dp_10"
+        android:text="查看用户"
+        android:textColor="@color/colorAccent"
+        android:textSize="@dimen/sp_18"/>
 
-</RelativeLayout>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/dp_20">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvUserMessage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/dp_10"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/sp_14"/>
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>
