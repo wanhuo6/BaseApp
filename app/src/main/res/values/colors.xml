@@ -16,11 +16,14 @@
     <color name="gray">#FF888888</color>
     <color name="transparent">#00000000</color>
 
+
     <!--标准颜色-->
     <color name="white">#ffffffff</color>
     <color name="black">#FF000000</color>
 
     <!--文字颜色-->
+    <color name="public_text_selector_tab">#1296db</color>
+    <color name="public_text_default_tab">#333333</color>
     <color name="public_text_hint_color">#999999</color>            <!--输入框提示颜色-->
     <color name="public_text_black">#FF363636</color>   <!--文字颜色-->
     <color name="public_text_white">#FFFFFFFF</color>

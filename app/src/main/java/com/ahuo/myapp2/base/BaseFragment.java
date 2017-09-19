@@ -42,11 +42,12 @@ public abstract class BaseFragment<P extends BasePresenter> extends Fragment imp
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         mRootView = inflater.inflate(R.layout.fragment_base, container, false);
       /*  mRootView = inflater.inflate(getLayoutId(), base, true);*/
+        mLLAppbar = mRootView.findViewById(R.id.ll_appbar);
         mContentLayout = mRootView.findViewById(R.id.content);
         inflater.inflate(getLayoutId(), mContentLayout, true);
         mLLNetError = mRootView.findViewById(R.id.ll_net_error);
         mBtnRefresh = mRootView.findViewById(R.id.btn_refresh);
-        mToolbar = (MyAppBar) mRootView.findViewById(R.id.kk_toolbar);
+        mToolbar =  mRootView.findViewById(R.id.kk_toolbar);
         mBtnRefresh.setOnClickListener(new MyOnClickListener() {
             @Override
             protected void onMyClick(View v) {
