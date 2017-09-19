@@ -34,7 +34,7 @@ public class CommonInterceptor implements Interceptor {
             newBuilder.cacheControl(CacheControl.FORCE_NETWORK);
         }
 
-        newBuilder.header("User-Agent", "KKZBPOS/Android");
+        newBuilder.header("User-Agent", "MyApp2/Android");
 
         compressedRequest = newBuilder.build();
 

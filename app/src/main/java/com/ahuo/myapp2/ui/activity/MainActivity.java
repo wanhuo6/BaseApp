@@ -1,5 +1,6 @@
 package com.ahuo.myapp2.ui.activity;
 
+import android.content.Intent;
 import android.support.v4.app.FragmentTabHost;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
@@ -7,6 +8,7 @@ import android.widget.TabHost;
 
 import com.ahuo.myapp2.R;
 import com.ahuo.myapp2.base.BaseActivity;
+import com.ahuo.myapp2.core.service.AliveService;
 import com.ahuo.myapp2.ui.fragment.DiscoveryFragment;
 import com.ahuo.myapp2.ui.fragment.MainFragment;
 import com.ahuo.myapp2.ui.fragment.PersonFragment;
@@ -38,6 +40,15 @@ public class MainActivity extends BaseActivity {
             mTabHost.addTab(tabSpec, mClassFragments[i], null);
         }
         mTabHost.getTabWidget().setShowDividers(LinearLayout.SHOW_DIVIDER_NONE);
+
+        startAliveService();
+
+    }
+
+    private void startAliveService() {
+
+        Intent intent = new Intent(this, AliveService.class);
+        startService(intent);
 
     }
 

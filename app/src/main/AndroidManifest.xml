@@ -8,7 +8,29 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
+        android:name=".MyApp"
         android:theme="@style/AppThemeCompat.FullScreen">
+
+        <receiver
+            android:name=".core.receiver.ScreenWakeReceiver"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter android:priority="1000">
+
+                <!-- 解锁 -->
+                <action android:name="android.intent.action.USER_PRESENT"/>
+            </intent-filter>
+        </receiver>
+
+        <service
+            android:name=".core.service.AliveService"
+            android:enabled="true"
+            android:exported="false"/>
+        <service
+            android:name=".core.service.MyAliveService"
+            android:enabled="true"
+            android:exported="false"/>
+
         <activity android:name=".ui.activity.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
@@ -16,6 +38,15 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
+
+        <activity
+            android:name=".core.alive.KeepAliveActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize|navigation|keyboard"
+            android:excludeFromRecents="true"
+            android:exported="false"
+            android:finishOnTaskLaunch="false"
+            android:launchMode="singleInstance"
+            android:theme="@style/LiveActivityStyle"/>
     </application>
 
 </manifest>
