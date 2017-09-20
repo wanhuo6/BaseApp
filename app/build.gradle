@@ -68,5 +68,5 @@ dependencies {
     compile 'com.jakewharton:butterknife:8.5.1'
     apt 'com.jakewharton:butterknife-compiler:8.5.1'
     compile 'com.squareup.leakcanary:leakcanary-android:1.5'
-    compile 'com.github.wanhuo6:Tools:1.0.7'
+    compile 'com.github.wanhuo6:tools:1.0.7'
 }
