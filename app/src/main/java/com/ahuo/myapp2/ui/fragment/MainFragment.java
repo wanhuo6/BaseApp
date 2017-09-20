@@ -9,6 +9,7 @@ import com.ahuo.myapp2.contract.MainFragmentContract;
 import com.ahuo.myapp2.entity.response.GetUserResponse;
 import com.ahuo.myapp2.presenter.MainFragmentPresenter;
 import com.ahuo.myapp2.ui.widget.MyAppBar;
+import com.ahuo.myapp2.util.MyLog;
 import com.ahuo.myapp2.util.ToastUtil;
 import com.alibaba.fastjson.JSONObject;
 
@@ -42,6 +43,7 @@ public class MainFragment extends BaseTitleFragment<MainFragmentPresenter> imple
 
     @Override
     public void initData() {
+        MyLog.e("init==========");
         mTvLookUsers.setOnClickListener(mClickListener);
     }
 

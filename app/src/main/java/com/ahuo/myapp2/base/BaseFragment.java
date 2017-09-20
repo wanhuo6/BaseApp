@@ -37,36 +37,55 @@ public abstract class BaseFragment<P extends BasePresenter> extends Fragment imp
     protected View mSplitLine;
     protected LinearLayout mLLNetError;
     protected Button mBtnRefresh;
+    protected boolean mHasInit;
+    protected LayoutInflater mLayoutInflater;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        mRootView = inflater.inflate(R.layout.fragment_base, container, false);
+        mLayoutInflater = inflater;
+        if (mRootView == null) {
+            mRootView = inflater.inflate(R.layout.fragment_base, container, false);
+        }
       /*  mRootView = inflater.inflate(getLayoutId(), base, true);*/
-        mLLAppbar = mRootView.findViewById(R.id.ll_appbar);
-        mContentLayout = mRootView.findViewById(R.id.content);
-        inflater.inflate(getLayoutId(), mContentLayout, true);
-        mLLNetError = mRootView.findViewById(R.id.ll_net_error);
-        mBtnRefresh = mRootView.findViewById(R.id.btn_refresh);
-        mToolbar =  mRootView.findViewById(R.id.kk_toolbar);
-        mBtnRefresh.setOnClickListener(new MyOnClickListener() {
-            @Override
-            protected void onMyClick(View v) {
-                refresh();
-            }
-        });
         return mRootView;
     }
 
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        setPresenter();
-        if (mPresenter != null) {
-            mPresenter.setView(this);
+        if (!mHasInit) {
+            mContentLayout = mRootView.findViewById(R.id.content);
+            mLayoutInflater.inflate(getLayoutId(), mContentLayout, true);
+            mLLAppbar = mRootView.findViewById(R.id.ll_appbar);
+            mLLNetError = mRootView.findViewById(R.id.ll_net_error);
+            mBtnRefresh = mRootView.findViewById(R.id.btn_refresh);
+            mToolbar = mRootView.findViewById(R.id.kk_toolbar);
+            mBtnRefresh.setOnClickListener(new MyOnClickListener() {
+                @Override
+                protected void onMyClick(View v) {
+                    refresh();
+                }
+            });
+            setPresenter();
+            if (mPresenter != null) {
+                mPresenter.setView(this);
+            }
+            mUnBinder = ButterKnife.bind(this, mRootView);
+            initData();
         }
-        mUnBinder = ButterKnife.bind(this, mRootView);
-        initData();
+        mHasInit = true;
 
+    }
+
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        if (mRootView != null) {
+            ViewGroup parent = ((ViewGroup) mRootView.getParent());
+            if (parent != null) {
+                parent.removeView(mRootView);
+            }
+        }
     }
 
     public void setTipLayout(String tip) {
@@ -118,4 +137,6 @@ public abstract class BaseFragment<P extends BasePresenter> extends Fragment imp
         HttpManager.dismissLoading();
         mUnBinder.unbind();
     }
+
+
 }
