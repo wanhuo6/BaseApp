@@ -13,6 +13,10 @@ import com.ahuo.myapp2.ui.fragment.DiscoveryFragment;
 import com.ahuo.myapp2.ui.fragment.MainFragment;
 import com.ahuo.myapp2.ui.fragment.PersonFragment;
 import com.ahuo.myapp2.ui.widget.MyTabView;
+import com.ahuo.myapp2.util.ToastUtil;
+
+import java.util.Timer;
+import java.util.TimerTask;
 
 import butterknife.BindView;
 
@@ -22,9 +26,10 @@ public class MainActivity extends BaseActivity {
     FrameLayout mTabContent;
     @BindView(R.id.tabHost)
     FragmentTabHost mTabHost;
-    private Class[] mClassFragments={MainFragment.class, DiscoveryFragment.class, PersonFragment.class};
+    private Class[] mClassFragments = {MainFragment.class, DiscoveryFragment.class, PersonFragment.class};
     private String[] mStrTab;
-    private int[] mIRTab= {R.drawable.bg_tab_selector_main, R.drawable.bg_tab_selector_discover, R.drawable.bg_tab_selector_person};
+    private int[] mIRTab = {R.drawable.bg_tab_selector_main, R.drawable.bg_tab_selector_discover, R.drawable.bg_tab_selector_person};
+    private boolean mIsExit;
 
     @Override
     protected int getLayoutId() {
@@ -33,8 +38,8 @@ public class MainActivity extends BaseActivity {
 
     @Override
     public void initData() {
-        mStrTab=getResources().getStringArray(R.array.main_tab_tag);
-        mTabHost.setup(this,getSupportFragmentManager(),R.id.tabContent);
+        mStrTab = getResources().getStringArray(R.array.main_tab_tag);
+        mTabHost.setup(this, getSupportFragmentManager(), R.id.tabContent);
         for (int i = 0; i < mClassFragments.length; i++) {
             TabHost.TabSpec tabSpec = mTabHost.newTabSpec(mStrTab[i]).setIndicator(getTabView(i));
             mTabHost.addTab(tabSpec, mClassFragments[i], null);
@@ -66,6 +71,31 @@ public class MainActivity extends BaseActivity {
     @Override
     public void setPresenter() {
 
+    }
+
+
+    @Override
+    public void onBackPressed() {
+        exitByDoubleClick();
+    }
+
+    private void exitByDoubleClick() {
+        Timer tExit;
+        if (!mIsExit) {
+            mIsExit = true;
+            ToastUtil.showToast(getString(R.string.public_str_app_back_hint));
+            tExit = new Timer();
+            tExit.schedule(new TimerTask() {
+                @Override
+                public void run() {
+                    mIsExit = false;
+                }
+            }, 2000);
+
+        } else {
+            //退出操作
+            finish();
+        }
     }
 
 }
