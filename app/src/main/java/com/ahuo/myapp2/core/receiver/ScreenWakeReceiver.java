@@ -6,7 +6,7 @@ import android.content.Intent;
 import android.text.TextUtils;
 
 import com.ahuo.myapp2.core.alive.AliveActivityManager;
-import com.ahuo.myapp2.util.MyLog;
+import com.ahuo.tool.util.MyLog;
 
 /**
  * Created by hly on 2016/10/12.

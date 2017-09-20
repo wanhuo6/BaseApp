@@ -11,7 +11,7 @@ import android.os.IBinder;
 import android.support.annotation.Nullable;
 
 import com.ahuo.myapp2.core.receiver.ScreenWakeReceiver;
-import com.ahuo.myapp2.util.MyLog;
+import com.ahuo.tool.util.MyLog;
 
 /**
  * Created on 2016-10-12.

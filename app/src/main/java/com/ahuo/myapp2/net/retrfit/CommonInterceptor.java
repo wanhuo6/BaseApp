@@ -2,8 +2,8 @@ package com.ahuo.myapp2.net.retrfit;
 
 
 import com.ahuo.myapp2.MyApp;
-import com.ahuo.myapp2.util.MyLog;
-import com.ahuo.myapp2.util.NetWorkUtils;
+import com.ahuo.tool.util.MyLog;
+import com.ahuo.tool.util.NetWorkUtils;
 
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;

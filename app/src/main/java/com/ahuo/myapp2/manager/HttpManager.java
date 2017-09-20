@@ -8,7 +8,7 @@ import com.ahuo.myapp2.R;
 import com.ahuo.myapp2.base.BaseResponse;
 import com.ahuo.myapp2.net.HttpExceptionUtils;
 import com.ahuo.myapp2.ui.widget.dialog.LoadingDialog;
-import com.ahuo.myapp2.util.NetWorkUtils;
+import com.ahuo.tool.util.NetWorkUtils;
 
 import io.reactivex.Observable;
 import io.reactivex.android.schedulers.AndroidSchedulers;

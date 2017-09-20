@@ -19,7 +19,7 @@ import android.widget.ScrollView;
 import android.widget.TextView;
 
 import com.ahuo.myapp2.R;
-import com.ahuo.myapp2.util.MyLog;
+import com.ahuo.tool.util.MyLog;
 
 import java.util.ArrayList;
 import java.util.List;

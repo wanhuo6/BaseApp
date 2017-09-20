@@ -7,7 +7,7 @@ import com.ahuo.myapp2.base.BaseResponse;
 import com.ahuo.myapp2.contract.MainFragmentContract;
 import com.ahuo.myapp2.entity.response.GetUserResponse;
 import com.ahuo.myapp2.manager.HttpManager;
-import com.ahuo.myapp2.util.MyLog;
+import com.ahuo.tool.util.MyLog;
 
 /**
  * Created by ahuo on 17-9-19.

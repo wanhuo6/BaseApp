@@ -23,7 +23,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.ahuo.myapp2.R;
-import com.ahuo.myapp2.util.CommonUtils;
+import com.ahuo.tool.util.CommonUtils;
 
 import java.lang.reflect.Field;
 import java.util.ArrayList;

@@ -6,7 +6,7 @@ import com.ahuo.myapp2.R;
 import com.ahuo.myapp2.base.BaseTitleFragment;
 import com.ahuo.myapp2.core.AppConfig;
 import com.ahuo.myapp2.ui.widget.MyAppBar;
-import com.ahuo.util.imageloader.GlideLoaderUtil;
+import com.ahuo.tool.imageloader.GlideLoaderUtil;
 
 import butterknife.BindView;
 

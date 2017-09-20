@@ -14,8 +14,8 @@ import android.widget.RelativeLayout;
 
 import com.ahuo.myapp2.R;
 import com.ahuo.myapp2.base.BaseActivity;
-import com.ahuo.myapp2.util.MyLog;
-import com.ahuo.myapp2.util.ToastUtil;
+import com.ahuo.tool.util.MyLog;
+import com.ahuo.tool.util.ToastUtil;
 
 import butterknife.BindView;
 

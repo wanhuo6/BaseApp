@@ -13,7 +13,7 @@ import com.ahuo.myapp2.ui.fragment.DiscoveryFragment;
 import com.ahuo.myapp2.ui.fragment.MainFragment;
 import com.ahuo.myapp2.ui.fragment.PersonFragment;
 import com.ahuo.myapp2.ui.widget.MyTabView;
-import com.ahuo.myapp2.util.ToastUtil;
+import com.ahuo.tool.util.ToastUtil;
 
 import java.util.Timer;
 import java.util.TimerTask;

@@ -9,8 +9,8 @@ import com.ahuo.myapp2.contract.MainFragmentContract;
 import com.ahuo.myapp2.entity.response.GetUserResponse;
 import com.ahuo.myapp2.presenter.MainFragmentPresenter;
 import com.ahuo.myapp2.ui.widget.MyAppBar;
-import com.ahuo.myapp2.util.MyLog;
-import com.ahuo.myapp2.util.ToastUtil;
+import com.ahuo.tool.util.MyLog;
+import com.ahuo.tool.util.ToastUtil;
 import com.alibaba.fastjson.JSONObject;
 
 import butterknife.BindView;

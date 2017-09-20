@@ -12,8 +12,8 @@ import android.widget.TextView;
 
 import com.ahuo.myapp2.R;
 import com.ahuo.myapp2.ui.widget.listener.NormalDialogListener;
-import com.ahuo.myapp2.util.MyOnClickListener;
-import com.ahuo.myapp2.util.ToastUtil;
+import com.ahuo.tool.util.MyOnClickListener;
+import com.ahuo.tool.util.ToastUtil;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;

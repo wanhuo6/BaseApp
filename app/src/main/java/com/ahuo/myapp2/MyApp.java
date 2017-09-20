@@ -3,8 +3,8 @@ package com.ahuo.myapp2;
 import android.app.Application;
 
 import com.ahuo.myapp2.core.AppConfig;
-import com.ahuo.myapp2.util.MyLog;
-import com.ahuo.myapp2.util.ToastUtil;
+import com.ahuo.tool.util.MyLog;
+import com.ahuo.tool.util.ToastUtil;
 import com.squareup.leakcanary.LeakCanary;
 
 /**

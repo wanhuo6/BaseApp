@@ -17,7 +17,7 @@ import android.widget.TextView;
 import com.ahuo.myapp2.R;
 import com.ahuo.myapp2.entity.other.NormalPickerEntity;
 import com.ahuo.myapp2.ui.widget.CustomerWheelView;
-import com.ahuo.myapp2.util.MyOnClickListener;
+import com.ahuo.tool.util.MyOnClickListener;
 
 import java.util.List;
 

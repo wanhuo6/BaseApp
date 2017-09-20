@@ -13,7 +13,7 @@ import android.widget.LinearLayout;
 import com.ahuo.myapp2.R;
 import com.ahuo.myapp2.manager.HttpManager;
 import com.ahuo.myapp2.ui.widget.MyAppBar;
-import com.ahuo.myapp2.util.MyOnClickListener;
+import com.ahuo.tool.util.MyOnClickListener;
 
 import butterknife.ButterKnife;
 import butterknife.Unbinder;

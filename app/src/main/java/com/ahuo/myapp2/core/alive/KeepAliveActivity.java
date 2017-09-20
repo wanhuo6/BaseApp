@@ -6,7 +6,7 @@ import android.view.Gravity;
 import android.view.Window;
 import android.view.WindowManager;
 
-import com.ahuo.myapp2.util.MyLog;
+import com.ahuo.tool.util.MyLog;
 
 /**
  * Created on 2016-10-13.
