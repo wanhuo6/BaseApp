@@ -25,7 +25,7 @@ public class MyLog {
     public static final String NULL_TIPS = "Log with null object";
     public static final String PARAM = "Param";
     public static final String NULL = "null";
-    public static String TAG_DEFAULT = "KKUserLog";
+    public static String TAG_DEFAULT = "MyUserLog";
     public static final String SUFFIX = ".java";
     public static final int JSON_INDENT = 4;
     public static final int V = 1;
