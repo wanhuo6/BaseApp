@@ -15,8 +15,8 @@ import android.widget.LinearLayout;
 import com.ahuo.myapp2.R;
 import com.ahuo.myapp2.manager.HttpManager;
 import com.ahuo.myapp2.ui.widget.MyAppBar;
-import com.ahuo.tool.util.MyOnClickListener;
 
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
 
@@ -27,12 +27,17 @@ import butterknife.Unbinder;
  */
 
 public abstract class BaseActivity<P extends BasePresenter> extends AppCompatActivity implements BaseView {
-    private FrameLayout mContentLayout;
-    protected MyAppBar mToolbar;
-    protected LinearLayout mLLAppbar;
-    protected View mSplitLine;
-    protected LinearLayout mLLNetError;
-    protected Button mBtnRefresh;
+    @BindView(R.id.appBar)
+    MyAppBar mAppBar;
+    @BindView(R.id.split_line)
+    View mSplitLine;
+    @BindView(R.id.ll_appbar)
+    LinearLayout mLLAppbar;
+    @BindView(R.id.btn_refresh)
+    Button mBtnRefresh;
+    @BindView(R.id.ll_net_error)
+    LinearLayout mLLNetError;
+    FrameLayout mContentLayout;
     protected P mPresenter;
 
     protected Unbinder mUnBinder = null;
@@ -48,7 +53,6 @@ public abstract class BaseActivity<P extends BasePresenter> extends AppCompatAct
         if (mPresenter != null) {
             mPresenter.setView(this);
         }
-        mUnBinder = ButterKnife.bind(this);
         initData();
     }
 
@@ -63,18 +67,7 @@ public abstract class BaseActivity<P extends BasePresenter> extends AppCompatAct
             getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
         }
         getDelegate().setContentView(R.layout.activity_base);
-        mLLAppbar = (LinearLayout) findViewById(R.id.ll_appbar);
-        mContentLayout = (FrameLayout) findViewById(R.id.content);
-        mSplitLine = findViewById(R.id.split_line);
-        mLLNetError = (LinearLayout) findViewById(R.id.ll_net_error);
-        mBtnRefresh = (Button) findViewById(R.id.btn_refresh);
-        mBtnRefresh.setOnClickListener(new MyOnClickListener() {
-            @Override
-            protected void onMyClick(View v) {
-                refresh();
-            }
-        });
-        mToolbar = (MyAppBar) findViewById(R.id.kk_toolbar);
+
     }
 
     @Override
@@ -86,8 +79,10 @@ public abstract class BaseActivity<P extends BasePresenter> extends AppCompatAct
     @Override
     public void setContentView(int layoutResID) {
         if (layoutResID != 0) {
+            mContentLayout = (FrameLayout) findViewById(R.id.content);
             mContentLayout.removeAllViews();
             getLayoutInflater().inflate(layoutResID, mContentLayout, true);
+            mUnBinder = ButterKnife.bind(this);
         }
     }
 

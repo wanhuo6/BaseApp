@@ -15,7 +15,7 @@ public abstract class BaseTitleFragment<P extends BasePresenter> extends BaseFra
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         mLLAppbar.setVisibility(View.VISIBLE);
-        mToolbar.setTitleConfig(getTitleViewConfig());
+        mAppBar.setTitleConfig(getTitleViewConfig());
     }
 
 

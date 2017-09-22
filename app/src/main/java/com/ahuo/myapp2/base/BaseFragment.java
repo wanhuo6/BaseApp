@@ -15,6 +15,7 @@ import com.ahuo.myapp2.manager.HttpManager;
 import com.ahuo.myapp2.ui.widget.MyAppBar;
 import com.ahuo.tool.util.MyOnClickListener;
 
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
 
@@ -27,16 +28,20 @@ public abstract class BaseFragment<P extends BasePresenter> extends Fragment imp
 
     protected P mPresenter;
 
-    protected Unbinder mUnBinder = null;
-
     protected View mRootView;
-
-    private FrameLayout mContentLayout;
-    protected LinearLayout mLLAppbar;
-    protected MyAppBar mToolbar;
-    protected View mSplitLine;
-    protected LinearLayout mLLNetError;
-    protected Button mBtnRefresh;
+    @BindView(R.id.appBar)
+    MyAppBar mAppBar;
+    @BindView(R.id.split_line)
+    View mSplitLine;
+    @BindView(R.id.ll_appbar)
+    LinearLayout mLLAppbar;
+    @BindView(R.id.content)
+    FrameLayout mContentLayout;
+    @BindView(R.id.btn_refresh)
+    Button mBtnRefresh;
+    @BindView(R.id.ll_net_error)
+    LinearLayout mLLNetError;
+    Unbinder mUnBinder;
     protected boolean mHasInit;
     protected LayoutInflater mLayoutInflater;
 
@@ -56,10 +61,8 @@ public abstract class BaseFragment<P extends BasePresenter> extends Fragment imp
         if (!mHasInit) {
             mContentLayout = mRootView.findViewById(R.id.content);
             mLayoutInflater.inflate(getLayoutId(), mContentLayout, true);
-            mLLAppbar = mRootView.findViewById(R.id.ll_appbar);
+            mUnBinder = ButterKnife.bind(this, mRootView);
             mLLNetError = mRootView.findViewById(R.id.ll_net_error);
-            mBtnRefresh = mRootView.findViewById(R.id.btn_refresh);
-            mToolbar = mRootView.findViewById(R.id.kk_toolbar);
             mBtnRefresh.setOnClickListener(new MyOnClickListener() {
                 @Override
                 protected void onMyClick(View v) {
@@ -70,7 +73,7 @@ public abstract class BaseFragment<P extends BasePresenter> extends Fragment imp
             if (mPresenter != null) {
                 mPresenter.setView(this);
             }
-            mUnBinder = ButterKnife.bind(this, mRootView);
+
             initData();
         }
         mHasInit = true;

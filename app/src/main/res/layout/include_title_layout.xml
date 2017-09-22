@@ -7,7 +7,7 @@
               android:visibility="gone">
 
     <com.ahuo.myapp2.ui.widget.MyAppBar
-        android:id="@+id/kk_toolbar"
+        android:id="@+id/appBar"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"/>
 
