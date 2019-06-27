@@ -46,7 +46,7 @@ public class MainActivity extends BaseActivity {
         }
         mTabHost.getTabWidget().setShowDividers(LinearLayout.SHOW_DIVIDER_NONE);
 
-        startAliveService();
+        //startAliveService();
 
     }
 
