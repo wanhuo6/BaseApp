@@ -3,7 +3,6 @@
                 android:id="@+id/rl_root"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
-                android:fitsSystemWindows="true"
                 android:orientation="vertical">
     <FrameLayout
         android:id="@+id/tabContent"

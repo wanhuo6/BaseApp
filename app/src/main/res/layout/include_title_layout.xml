@@ -9,6 +9,7 @@
     <com.ahuo.myapp2.ui.widget.MyAppBar
         android:id="@+id/appBar"
         android:layout_width="match_parent"
+        android:background="@color/public_tool_bar_bg_color"
         android:layout_height="?attr/actionBarSize"/>
 
     <View

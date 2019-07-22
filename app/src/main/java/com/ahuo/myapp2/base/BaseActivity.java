@@ -15,6 +15,7 @@ import android.widget.LinearLayout;
 import com.ahuo.myapp2.R;
 import com.ahuo.myapp2.manager.HttpManager;
 import com.ahuo.myapp2.ui.widget.MyAppBar;
+import com.gyf.immersionbar.ImmersionBar;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -27,11 +28,8 @@ import butterknife.Unbinder;
  */
 
 public abstract class BaseActivity<P extends BasePresenter> extends AppCompatActivity implements BaseView {
-    @BindView(R.id.appBar)
     MyAppBar mAppBar;
-    @BindView(R.id.split_line)
     View mSplitLine;
-    @BindView(R.id.ll_appbar)
     LinearLayout mLLAppbar;
     @BindView(R.id.btn_refresh)
     Button mBtnRefresh;
@@ -57,7 +55,7 @@ public abstract class BaseActivity<P extends BasePresenter> extends AppCompatAct
     }
 
     protected void initWindows() {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {//5.0及以上
+        /*if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {//5.0及以上
             View decorView = getWindow().getDecorView();
             int option = View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
                     | View.SYSTEM_UI_FLAG_LAYOUT_STABLE;
@@ -66,7 +64,16 @@ public abstract class BaseActivity<P extends BasePresenter> extends AppCompatAct
         } else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT && Build.VERSION.SDK_INT < Build.VERSION_CODES.LOLLIPOP) {//4.4到5.0
             getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
         }
+        getDelegate().setContentView(R.layout.activity_base);*/
+        ImmersionBar.with(this)
+                .fitsSystemWindows(true)//纯色状态栏，渐变色需要更换方式
+                .statusBarColor(R.color.public_status_bar_bg_color)
+                .keyboardEnable(true)
+                .init();
         getDelegate().setContentView(R.layout.activity_base);
+        mAppBar=findViewById(R.id.appBar);
+        mLLAppbar=findViewById(R.id.ll_appbar);
+        mSplitLine=findViewById(R.id.split_line);
 
     }
 

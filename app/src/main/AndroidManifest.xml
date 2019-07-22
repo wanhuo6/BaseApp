@@ -13,27 +13,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:networkSecurityConfig="@xml/network_security_config"
-        android:theme="@style/AppThemeCompat.FullScreen">
-
-        <receiver
-            android:name=".core.receiver.ScreenWakeReceiver"
-            android:enabled="true"
-            android:exported="true">
-            <intent-filter android:priority="1000">
-
-                <!-- 解锁 -->
-                <action android:name="android.intent.action.USER_PRESENT"/>
-            </intent-filter>
-        </receiver>
-
-        <service
-            android:name=".core.service.AliveService"
-            android:enabled="true"
-            android:exported="false"/>
-        <service
-            android:name=".core.service.MyAliveService"
-            android:enabled="true"
-            android:exported="false"/>
+        android:theme="@style/Theme.AppCompat.Light.NoActionBar">
 
         <activity android:name=".ui.activity.MainActivity">
             <intent-filter>
@@ -43,14 +23,6 @@
             </intent-filter>
         </activity>
 
-        <activity
-            android:name=".core.alive.KeepAliveActivity"
-            android:configChanges="keyboardHidden|orientation|screenSize|navigation|keyboard"
-            android:excludeFromRecents="true"
-            android:exported="false"
-            android:finishOnTaskLaunch="false"
-            android:launchMode="singleInstance"
-            android:theme="@style/LiveActivityStyle"/>
          <activity
             android:name=".ui.activity.MyWebViewActivity"
             android:process=":myWebView"

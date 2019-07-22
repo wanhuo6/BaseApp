@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">MyApp2</string>
+    <string name="app_name">BaseApp</string>
     <!-- public -->
     <string name="public_hint_data_loading">数据加载中，请稍后...</string>
     <string name="public_str_confirm">确认</string>

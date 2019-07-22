@@ -5,8 +5,8 @@
     <color name="colorAccent">#FF4081</color>
     <color name="public_primary_color">#EA5500</color>          <!--主色调-->
 
-    <color name="public_tool_bar_bg_color">#F0F0F0</color>      <!-- tool bar 背景色 -->
-    <color name="public_status_bar_bg_color">#80000000</color>    <!-- status bar 背景色 -->
+    <color name="public_tool_bar_bg_color">#DDDDDD</color>      <!-- tool bar 背景色 -->
+    <color name="public_status_bar_bg_color">#DDDDDD</color>    <!-- status bar 背景色 -->
     <color name="public_status_bar_text_color">#535353</color>    <!-- status bar Title色 -->
 
     <color name="background_primary">#F1F1F1</color>     <!--背景颜色，Activity背景-->
