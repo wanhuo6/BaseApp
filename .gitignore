@@ -7,4 +7,11 @@
 /build
 /captures
 .externalNativeBuild
-/.idea/
+gradle
+*.iml
+gradlew
+gradlew.bat
+local.properties
+build
+.idea
+/.settings/
